@@ -110,7 +110,7 @@ class Bonus{//Класс, определяющий бонус
 		let deltaX = this.speed * Math.sin(this.angle * Math.PI / 180);//Приращение по координате x в соответствии с углом поворота
 		let deltaY = this.speed * Math.cos(this.angle * Math.PI / 180);//Приращение по координате y в соответствии с углом поворота
 		this.rotationSpeed = Math.round(Math.random() * 3);//Случайное приращение вращения
-		this.angle += this.rotationSpeed;//Повернуть бонус со случайным приращением
+		this.angle += this.rotationSpeed * (Math.round(Math.random() * 2) - 1);//Повернуть бонус со случайным приращением
 		this.x += deltaX * this.direction;//Установить новое значение координаты x в зависимости от направления движения
 		this.y += deltaY * this.direction;//Установить новое значение координаты y в зависимости от направления движения
 		if(this.x < SCREEN_PADDING || this.x > W - SCREEN_PADDING || this.y < SCREEN_PADDING || this.y > H - SCREEN_PADDING){//Если бонус вышел за пределы (игрового поля минус отступ от края игрового поля)
