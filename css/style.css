@@ -1,0 +1,184 @@
+@font-face{
+	font-family:'Money';
+	src:url(../fonts/money.ttf),url(../fonts/money.woff),url(../money.svg);
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	height: 100%;
+}
+body{
+	background-image: url(../images/stars.png),url(../images/planets.png),url(../images/cell.png),url(../images/pattern.png);
+	background-repeat: no-repeat,no-repeat,repeat,repeat;
+	background-position: center center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+#screen{
+	background-image: url(../images/background.png);
+	width: 640px;
+	height: 480px;
+	overflow: hidden;
+	position: relative;
+}
+#game_screen{
+	width: 640px;
+	height: 373px;
+	position: absolute;
+	left: 0;
+	top: 44px;
+}
+#gui{
+	width: 640px;
+	height: 68px;
+	background-image: url(../images/gui.png);
+	position: absolute;
+	left: 0;
+	top: 0;
+
+}
+#text{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 20px;
+	height: 39px;
+	width: 340px;
+}
+#neon{
+	background-image: url(../images/neon.png);
+	height: 39px;
+	width: 150px;
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	animation: neon 1s;
+	
+}
+#space{
+	background-image: url(../images/space.png);
+	height: 39px;
+	width: 177px;
+	display: inline-block;
+	position: absolute;
+	animation: space 1s;
+	right: 0;
+}
+#spaceship{
+	position: absolute;
+	left: 226px;
+	top: 280px;	
+	animation: spaceship 500ms;					
+}
+#spaceship_body{
+	background-image: url(../images/ship.png);
+	width: 94px;
+	height: 97px;
+	position: absolute;
+	
+}
+#spaceship_flame{
+	width: 20px;
+	height: 30px;
+	background-image: url(../images/ship_flame.png);
+	position: absolute;
+	left: 36px;
+	top: 68px;
+}
+@keyframes neon{
+	from{left: 340px;}
+	to{left: 0;}
+}
+@keyframes space{
+	from{right: 313px;}
+	to{right: 0;}
+}
+#glare{
+	background-image: url(../images/glare.png);
+	width: 1700px;
+	height: 324px;
+	position: absolute;
+	
+}
+#test{
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #fff;
+}
+@keyframes spaceship{
+	from{top:383px};
+	to{top:280px;};
+}
+#score_wrapper{
+	color: #fff;
+	position: absolute;
+	top:10px;
+	right:125px;
+	font-family:'Money';
+	font-size: 20px;
+	text-shadow: 0 0 2px #01E16B;
+	color: #000;
+	font-weight: bold;
+}
+.star{
+	position: absolute;
+	background-image: url(../images/star.png);
+}
+.bonus,.bonus_red,.bonus_white{
+	width: 32px;
+	height: 32px;
+	position: absolute;
+}
+.bonus{
+	background-image: url(../images/bonus.png);
+	animation: bonus 500ms;
+}
+.bonus_red{
+	background-image: url(../images/bonus_red.png);
+	animation: bonus_hiding 500ms;
+}
+.bonus_white{
+	background-image: url(../images/bonus_white.png);
+	animation: bonus_hiding 500ms;
+}
+@keyframes bonus{
+	from{opacity:0;}
+	to{opacity:1.0;}
+}
+@keyframes bonus_hiding{
+	from{opacity:1.0;}
+	to{opacity:0;}
+}
+.msg_minus{
+	color: red;
+	position: absolute;
+	font-weight:bold;
+	font-family:Arial;
+	animation: msg 700ms;
+	opacity:1.0;
+}
+.msg_plus{
+	color: white;
+	position: absolute;
+	font-weight:bold;
+	font-family:Arial;
+	animation: msg 700ms;
+	opacity:1.0;
+}
+@keyframes msg{
+	from{opacity:1.0;transform: translateY(0);}
+	to{opacity:0;transform: translateY(-20px);}
+}
+#glare{
+	width: 340px;
+	height: 39px;
+	background-image: url(../images/glare.png);
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
